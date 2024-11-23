@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+
 function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('http://10.0.0.4:3000/')
+    axios.get(process.env.REACT_APP_API_BASE_URL + '/')
       .then(response => setData(response.data))
       .catch(error => console.error('Error fetching root API:', error));
   }, []);

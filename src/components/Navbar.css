@@ -1,25 +1,58 @@
+/* Navbar container styling */
 .navbar {
-    background-color: #333;
-    padding: 10px;
-  }
-  
-  .navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  .navbar li {
-    margin-right: 20px;
-  }
-  
-  .navbar a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .navbar a:hover {
-    text-decoration: underline;
-  }
-  
+  height: 100vh;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #1E1E1E;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Remove default list styles */
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* List item styles */
+.navbar ul li {
+  margin: 15px 0;
+}
+
+/* Link styles */
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  display: block;
+  /* Make the link cover the entire list item */
+  padding: 10px;
+  /* Add padding for a clickable area */
+  border-radius: 5px;
+  /* Optional: rounded corners */
+}
+
+/* Hover effect for links */
+.navbar ul li a:hover {
+  background-color: #ffffff;
+  /* Dark gray background on hover */
+  color: #00bcd4;
+  /* Change text color for contrast */
+}
+/* Main content adjustments */
+.main-content {
+  margin-left: 230px;
+  /* Push content to the right, equal to navbar width */
+  padding: 20px;
+  /* Add padding for better appearance */
+  background-color: #2A2A2A;
+  /* Light background for contrast */
+  min-height: 100vh;
+  /* Ensure it covers the full height */
+  color: #E0E0E0
+}
