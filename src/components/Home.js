@@ -6,7 +6,7 @@ function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get(process.env.REACT_APP_API_BASE_URL + '/')
+    axios.get('http://localhost:3000' + '/')
       .then(response => setData(response.data))
       .catch(error => console.error('Error fetching root API:', error));
   }, []);
