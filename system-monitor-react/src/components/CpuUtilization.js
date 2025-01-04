@@ -4,6 +4,7 @@ import axios from 'axios';
 import { GaugeComponent } from 'react-gauge-component';
 
 
+
 function gague(data){
  return <GaugeComponent value = {data} minvalue = "0" maxvalue = "100"  style={{ width: '50%', height: '50%' }}/>
 }
@@ -35,11 +36,19 @@ function CpuUtilization() {
 
   return (
     <div>
-      {gague(Number(data["utilization"]["overallLoad"].slice(0, -1)))}
-      {Number(data["utilization"]["overallLoad"].slice(0, -1))}
+      
       
       <h1>CPU Utilization</h1>
-      <pre >{data ? JSON.stringify(data, null, 2) : 'Loading...'}</pre>
+      
+      <pre >{data ? 
+              (
+               <> 
+                {gague(Number(data["utilization"]["overallLoad"].slice(0, -1)))} 
+                {JSON.stringify(data, null, 2)} 
+               </> 
+              ) : 'Loading...'}
+      </pre>
+
     </div>
   );
 }
