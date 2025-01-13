@@ -10,12 +10,23 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import Toolbar from '@mui/material/Toolbar';
 
-export default function TemporaryDrawer() {
-    const [open, setOpen] = React.useState(false);
 
+const drawerWidth = 240;
+
+export default function Sidebar() {
     return (
-      <Box sx={{ width: 250 ,height:"100vh"}} role="presentation" >
+      <Drawer
+      variant="permanent"
+      sx={{
+        width: drawerWidth,
+        flexShrink: 0,
+        [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+      }}
+    >
+      <Toolbar />
+      <Box sx={{ overflow: 'auto' }}>
         <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem key={text} disablePadding>
@@ -42,5 +53,6 @@ export default function TemporaryDrawer() {
           ))}
         </List>
       </Box>
+    </Drawer>
     );
   }
